@@ -1,0 +1,21 @@
+title: Gerenciador de tarefas
+authors:
+  - family-names: Zhu
+    given-names: Ronaldo
+  - family-names: Barbosa
+    given-names: Daniel
+  - family-names: De Oliveira
+    given-names: Pablo
+  - name-suffix: Professor 
+    affiliation: PUC Minas
+    family-names: Pontes
+    given-names: Diego
+  
+keywords:
+  -Tarefas
+  -Data
+  -Visualização
+  -Organizações
+repository-code: https://github.com/ICEI-PUC-Minas-PPC-CC/puc-pocos-comp-laed-012026-os-compilados/upload/main
+version: 1.0.0
+date-released: 2026-5-12
