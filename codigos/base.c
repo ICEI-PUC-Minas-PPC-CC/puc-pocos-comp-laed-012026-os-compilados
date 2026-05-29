@@ -1,8 +1,8 @@
-* PROJETO DE AED I - ETAPA 1 (Entrega: 02/06)
- * TÍTULO: Gerenciador de Tarefas
- * GRUPO: Pablo, Daniel, Ronaldo
+// * PROJETO DE AED I - ETAPA 1 (Entrega: 02/06)
+//  * TÍTULO: Gerenciador de Tarefas
+//  * GRUPO: Pablo, Daniel, Ronaldo
 
-CÓDIGO EM C:
+// CÓDIGO EM C:
 
 #include <stdio.h>
 #include <stdlib.h>
