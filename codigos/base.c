@@ -31,12 +31,13 @@ int main() {
         printf("3. - EDITAR TAREFA \n");
         printf("4. - EXLUIR TAREFA \n");
         printf("5. - PESQUISAR TAREFA \n");
-        printf("0. - LIMPAR SISTEMA/TAREFAS \n");
+        printf("6. - LIMPAR SISTEMA/TAREFAS \n");
+        printf("0. - SAIR DO SISTEMA \n");
 
-        printf("Digite uma opcao: ");
-        scanf(" %d", &opção);
+        printf("DIGITE UMA OPCAO: ");
+        scanf(" %d", &opcao);
 
-        switch (opção){
+        switch (opcao){
             case 1:
                 printf("Incluindo...\n\n");
                 break;
@@ -60,7 +61,7 @@ int main() {
                 break;
 
         }
-    }while(opção != 0);
+    }while(opcao != 0);
 
     return 0;
 }
