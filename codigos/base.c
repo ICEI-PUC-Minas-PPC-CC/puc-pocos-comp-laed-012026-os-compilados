@@ -3,7 +3,7 @@
 //  * GRUPO: Pablo, Daniel, Ronaldo
 
 // CÓDIGO EM C:
-// teste
+
 
 #include <stdio.h>
 #include <stdlib.h>
