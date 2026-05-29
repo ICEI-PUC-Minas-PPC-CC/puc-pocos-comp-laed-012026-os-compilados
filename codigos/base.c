@@ -26,15 +26,15 @@ int main() {
     // 3. laço principal do menu
     do{
         printf("\n--- GERENCIADOR DE TAREFAS ---\n");
-        printf("1. - INSERIR TAREFA \n");
-        printf("2. - LISTAR TAREFA \n");
-        printf("3. - EDITAR TAREFA \n");
-        printf("4. - EXLUIR TAREFA \n");
-        printf("5. - PESQUISAR TAREFA \n");
-        printf("6. - LIMPAR SISTEMA/TAREFAS \n");
-        printf("0. - SAIR DO SISTEMA \n");
+        printf("\n1.  INSERIR TAREFA \n");
+        printf("\n2.  LISTAR TAREFA \n");
+        printf("\n3.  EDITAR TAREFA \n");
+        printf("\n4.  EXLUIR TAREFA \n");
+        printf("\n5.  PESQUISAR TAREFA \n");
+        printf("\n6.  LIMPAR SISTEMA/TAREFAS \n");
+        printf("\n0.  SAIR DO SISTEMA \n");
 
-        printf("DIGITE UMA OPCAO: ");
+        printf("\nDIGITE UMA OPCAO: \n");
         scanf(" %d", &opcao);
 
         switch (opcao){
