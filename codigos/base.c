@@ -203,6 +203,10 @@ int main() {
             case 5:
                 printf("AAAA\n\n");
                 break;
+            case 6:
+                i = 0;
+                printf("Todas as tarefas foram excluidas.\n");
+                break;
             case 0:
                 printf("Saindo...");
                 break;
