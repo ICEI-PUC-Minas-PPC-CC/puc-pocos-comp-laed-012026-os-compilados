@@ -9,7 +9,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-// 1. ESTRUTURA DO CÓDIGO DE ACORDO COM REQUISITOS DO DIEGO//teste
+// 1. ESTRUTURA DO CÓDIGO DE ACORDO COM REQUISITOS DO DIEGO//
 
 struct Tarefa {
     char nome[50];
