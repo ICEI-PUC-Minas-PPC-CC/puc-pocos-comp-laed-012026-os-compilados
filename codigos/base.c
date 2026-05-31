@@ -62,7 +62,7 @@ int listar_tarefa(int tamanho_indice){
     {
         printf("=====LISTANDO TAREFAS=====\n");
         printf("%dº Tarefa: %s\nStatus: %d\n",i+1, lista[i].nome, lista[i].status);
-        printf("==============\n");
+        printf("=============================\n");
         
     }
     
