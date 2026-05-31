@@ -1,26 +1,23 @@
-// * PROJETO DE AED I - ETAPA 1 (Entrega: 02/06)
-//  * TÍTULO: Gerenciador de Tarefas
-//  * GRUPO: Pablo, Daniel, Ronaldo
-
-// CÓDIGO EM C:
-
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-// 1. ESTRUTURA DO CÓDIGO DE ACORDO COM REQUISITOS DO DIEGO//
 
 struct Tarefa {
     char nome[50];
     char descricao[100];
-    int status; // 1 para ativa, 0 para excluida 2 para pendente
+    int status; 
 };
 struct Tarefa lista[10];
+
+
+
 
 int inserir_tarefa(int indice){
     char nameTarefa[50];
     char nameDescricao[100];
+    char status[20];
+    lista[indice].status = 0;
 
     printf("Digite o nome da %dº tarefa:\n", indice+1);
     scanf("%49s", nameTarefa);
@@ -30,24 +27,57 @@ int inserir_tarefa(int indice){
     scanf("%99s", nameDescricao);
     strcpy(lista[indice].descricao, nameDescricao);
 
+    while (lista[indice].status == 0)
+    {
+        printf("Digite o status da sua tarefa \n[em_andamento]\n[pendente]\n[concluida]\n");
+        scanf("%19s", status);
 
-
-
+        if (strcmp(status, "pendente") == 0)
+        {
+            lista[indice].status = 0;
+            break;
+        } else if (strcmp(status, "em_andamento") == 0)
+        {
+             lista[indice].status = 1;
+        }else if (strcmp(status, "concluída") == 0)
+        {
+            lista[indice].status = 2;
+        }
+        
+        
+        
+    }
+    
 
     printf("%s\n", lista[indice].nome);
-    printf("%s", lista[indice].descricao);
+    printf("%s\n", lista[indice].descricao);
+    printf("%d\n", lista[indice].status);
 
     return 0;
 }
 
+int listar_tarefa(int tamanho_indice){
+    int i;
+    for (i = 0; i < tamanho_indice; i++)
+    {
+        printf("=====LISTANDO TAREFAS=====\n");
+        printf("%dº Tarefa: %s\nStatus: %d\n",i+1, lista[i].nome, lista[i].status);
+        printf("==============\n");
+        
+    }
+    
+
+    return 0;
+}
+
+
+
+
 int main() {
-    // 2. requisito vetor com capacidade para 10 tarefas
     int opcao;
     int i = 0;
 
-    //precisamos definir o for aqui, começar ele zerado vazio <--
-    
-    // 3. laço principal do menu
+
     do{
         printf("\n--- GERENCIADOR DE TAREFAS ---\n");
         printf("\n1.  INSERIR TAREFA \n");
@@ -67,7 +97,7 @@ int main() {
                 i++;
                 break;
             case 2:
-                printf("Incluindo...\n\n");
+                listar_tarefa(i);
                 break;
             case 3:
                 printf("Incluindo...\n\n");
