@@ -109,7 +109,7 @@ int editar_tarefa(int tamanho_indice){
                 printf("Digite a descrição que irá substituir a descrição --> %s\n", lista[i].descricao);
                 scanf("%99s", novaDescricao);
 
-                strcpy(lista[i].nome, novaDescricao);
+                strcpy(lista[i].descricao, novaDescricao);
             }else if (strcmp(editando, "status") == 0)
             {
                 do
@@ -117,7 +117,6 @@ int editar_tarefa(int tamanho_indice){
                     printf("Digite o status que irá substituir o status --> %s\n", lista[i].statusDescr);
                     scanf("%19s", novoStatus);
 
-                    strcpy(lista[i].nome, novoStatus);
                 } while (strcmp(novoStatus, "em_andamento") != 0 && strcmp(novoStatus, "pendente") != 0 && strcmp(novoStatus, "concluída") != 0);
 
                 if (strcmp(novoStatus, "em_andamento") == 0){
@@ -143,22 +142,24 @@ int editar_tarefa(int tamanho_indice){
 
 }
 
-int exluir_tarefa(int tamanho_indice){
+int excluir_tarefa(int tamanho_indice){
     int op;
 
     printf("Informe a tarefa que deseja excluir [digite do 1 até o número da tarefa máxima]: ");
     listar_tarefa(tamanho_indice);
     scanf("%d", &op);
 
-    for (op; op < tamanho_indice; op++)
+    op--;
+
+    for (op; op < tamanho_indice - 1; op++)
     {
         strcpy(lista[op].nome, lista[op+1].nome);
         strcpy(lista[op].descricao, lista[op+1].descricao);
         strcpy(lista[op].statusDescr, lista[op+1].statusDescr);
-        strcpy(lista[op].status, lista[op+1].status);
+        lista[op].status = lista[op+1].status;
     }
     
-    
+    return tamanho_indice-1;
 }
 
 
@@ -194,7 +195,7 @@ int main() {
                 editar_tarefa(i);
                 break;
             case 4:
-                excluir_tarefa(i);
+                i = excluir_tarefa(i);
                 break;
             case 5:
                 printf("AAAA\n\n");
