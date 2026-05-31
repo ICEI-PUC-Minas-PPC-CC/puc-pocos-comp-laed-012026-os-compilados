@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <locale.h>
 
 
 struct Tarefa {
@@ -168,6 +169,8 @@ int excluir_tarefa(int tamanho_indice){
 int main() {
     int opcao;
     int i = 0;
+
+    setlocale(LC_ALL, "Portuguese");
 
 
     do{
