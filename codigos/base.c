@@ -178,7 +178,7 @@ int main() {
         printf("\n1.  INSERIR TAREFA \n");
         printf("\n2.  LISTAR TAREFAS \n");
         printf("\n3.  EDITAR TAREFA \n");
-        printf("\n4.  EXLUIR TAREFA \n");
+        printf("\n4.  EXCLUIR TAREFA \n");
         printf("\n5.  PESQUISAR TAREFA \n");
         printf("\n6.  LIMPAR SISTEMA/TAREFAS \n");
         printf("\n0.  SAIR DO SISTEMA \n");
