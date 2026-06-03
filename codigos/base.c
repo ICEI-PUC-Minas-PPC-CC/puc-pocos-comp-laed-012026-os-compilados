@@ -1,3 +1,8 @@
+// PROJETO: GERENCIADOR DE TAREFAS
+//NOMES: DANIEL BARBOSA MONTE VERDE, PABLO DE OLIVEIRA, RONALDO ZHU JIA HUI
+
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
