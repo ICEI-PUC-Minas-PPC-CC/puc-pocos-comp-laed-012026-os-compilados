@@ -14,6 +14,7 @@ struct Tarefa {
     char descricao[100];
     int status;  // 0 significará pendente; 1 significará em anamento; 2 significará concluída
     char statusDescr[20];
+    int ativo;
 };
 struct Tarefa lista[10];
 
@@ -23,6 +24,7 @@ struct Tarefa lista[10];
 int main() {
     int opcao;
     int i = 0;
+    int tamanho_i;
 
     setlocale(LC_ALL, "Portuguese");
 
@@ -42,11 +44,20 @@ int main() {
 
         switch (opcao){
             case 1:
-                printf("=====ADICIONE NOVAS TAREFAS=====");
+                printf("=====ADICIONE NOVAS TAREFAS=====\n");
+                lista[i].status = 1;
+                lista[i].ativo = 0;
+                strcpy(lista[i].nome, "\nLavar o gato");
+                strcpy(lista[i].descricao, "aaaaaaaaaaaa");
                 i++;
                 break;
             case 2:
                 printf("=====LISTA DE TAREFAS=====");
+                for(tamanho_i = 0; tamanho_i < i; tamanho_i++){
+                    if(lista[tamanho_i].ativo != 0){
+                        printf("%s", lista[tamanho_i].nome);
+                    }
+                }
                 break;
             case 3:
                 printf("=====EDITOR DE TAREFAS=====");
