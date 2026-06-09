@@ -18,6 +18,73 @@ struct Tarefa {
 };
 struct Tarefa lista[10];
 
+int inserir_tarefa(int indice){
+    char nameTarefa[50];
+    char nameDescricao[100];
+    char status[20];
+    lista[indice].status = 0;
+
+    printf("Digite o nome da %dº tarefa:\n", indice+1);
+    scanf("%49s", nameTarefa);
+    strcpy(lista[indice].nome, nameTarefa);
+
+    printf("Digite a descrição da tarefa [%s]: ");
+    scanf("%99s", nameDescricao);
+    strcpy(lista[indice].descricao, nameDescricao);
+
+    while (lista[indice].status == 0)
+    {
+        printf("Digite o status da sua tarefa \n[em_andamento]\n[pendente]\n[concluida]\n");
+        scanf("%19s", status);
+
+        if (strcmp(status, "pendente") == 0)
+        {
+            lista[indice].status = 0;
+            strcpy(lista[indice].statusDescr, "Pendente");
+            break;
+        } else if (strcmp(status, "em_andamento") == 0)
+        {
+             lista[indice].status = 1;
+             strcpy(lista[indice].statusDescr, "Em andamento");
+
+        }else if (strcmp(status, "concluída") == 0)
+        {
+            strcpy(lista[indice].statusDescr, "Concluída");
+            lista[indice].status = 2;
+        }
+        
+        
+        
+    }
+    
+
+    printf("%s\n", lista[indice].nome);
+    printf("%s\n", lista[indice].descricao);
+    printf("%d\n", lista[indice].status);
+
+    return 0;
+}
+
+int listar_tarefa(int tamanho_indice){
+    int i;
+    for (i = 0; i < tamanho_indice; i++)
+    {
+        if (lista[i].ativo != 0)
+        {
+            printf("=====LISTANDO TAREFAS=====\n");
+            printf("%dº Tarefa: %s\nStatus: %s\n",i+1, lista[i].nome, lista[i].statusDescr);
+            printf("=============================\n");
+        }
+        
+
+        
+
+    }
+    
+
+    return 0;
+}
+
 
 
 
@@ -45,19 +112,12 @@ int main() {
         switch (opcao){
             case 1:
                 printf("=====ADICIONE NOVAS TAREFAS=====\n");
-                lista[i].status = 1;
-                lista[i].ativo = 0;
-                strcpy(lista[i].nome, "\nLavar o gato");
-                strcpy(lista[i].descricao, "aaaaaaaaaaaa");
+                inserir_tarefa(i);
                 i++;
                 break;
             case 2:
-                printf("=====LISTA DE TAREFAS=====");
-                for(tamanho_i = 0; tamanho_i < i; tamanho_i++){
-                    if(lista[tamanho_i].ativo != 0){
-                        printf("%s", lista[tamanho_i].nome);
-                    }
-                }
+                lista[i-1].ativo = 1;
+                listar_tarefa(i);
                 break;
             case 3:
                 printf("=====EDITOR DE TAREFAS=====");
