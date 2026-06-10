@@ -52,11 +52,11 @@ int inserir_tarefa(int indice){
             strcpy(lista[indice].statusDescr, "Concluída");
             lista[indice].status = 2;
         }
-        
-        
-        
+
+
+
     }
-    
+
 
     printf("%s\n", lista[indice].nome);
     printf("%s\n", lista[indice].descricao);
@@ -75,12 +75,12 @@ int listar_tarefa(int tamanho_indice){
             printf("%dº Tarefa: %s\nStatus: %s\n",i+1, lista[i].nome, lista[i].statusDescr);
             printf("=============================\n");
         }
-        
 
-        
+
+
 
     }
-    
+
 
     return 0;
 }
@@ -112,11 +112,13 @@ int main() {
         switch (opcao){
             case 1:
                 printf("=====ADICIONE NOVAS TAREFAS=====\n");
-                inserir_tarefa(i);
-                i++;
+                if(i<=10){
+                    inserir_tarefa(i);
+                    lista[i].ativo = 1;
+                    i++;
+                }
                 break;
             case 2:
-                lista[i-1].ativo = 1;
                 listar_tarefa(i);
                 break;
             case 3:
