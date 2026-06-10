@@ -54,7 +54,6 @@ int inserir_tarefa(int indice){
         }
 
 
-
     }
 
 
@@ -81,10 +80,8 @@ int listar_tarefa(int tamanho_indice){
 
     }
 
-
     return 0;
 }
-
 
 
 
