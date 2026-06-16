@@ -63,7 +63,6 @@ int inserir_tarefa(int indice){
 
     return 0;
 }
-
 int listar_tarefa(int tamanho_indice){
     int i;
     for (i = 0; i < tamanho_indice; i++)
@@ -82,8 +81,100 @@ int listar_tarefa(int tamanho_indice){
 
     return 0;
 }
+int editar_tarefa(int tamanho_indice){
+    int op;
+    int i;
+    char editando[20];
+    char novoNome[50];
+    char novoStatus[20];
+    char novaDescricao[100];
 
+    printf("Informe a tarefa que deseja editar [digite do 1 até o número da tarefa máxima]: ");
+    listar_tarefa(tamanho_indice);
+    scanf("%d", &op);
 
+    for (i = 0; i < tamanho_indice; i++){
+        if (i == (op-1))
+        {
+            printf("Digite o que deseja editar na tarefa [%s] [digite o que está dentro de <...>]\n\n", lista[i].nome);
+
+            printf("O <nome>: %s\n", lista[i].nome);
+            printf("A <descricão>: %s\n", lista[i].descricao);
+            printf("O <status>: %s\n", lista[i].statusDescr);
+
+            scanf("%19s", editando);
+
+            if (strcmp(editando, "nome") == 0)
+            {
+                printf("Digite o nome que irá substituir o nome --> %s\n", lista[i].nome);
+                scanf("%49s", novoNome);
+
+                strcpy(lista[i].nome, novoNome);
+            }else if (strcmp(editando, "descrição") == 0)
+            {
+                printf("Digite a descrição que irá substituir a descrição --> %s\n", lista[i].descricao);
+                scanf("%99s", novaDescricao);
+
+                strcpy(lista[i].descricao, novaDescricao);
+            }else if (strcmp(editando, "status") == 0)
+            {
+                do
+                {
+                    printf("Digite o status que irá substituir o status --> %s\n", lista[i].statusDescr);
+                    scanf("%19s", novoStatus);
+
+                } while (strcmp(novoStatus, "em_andamento") != 0 && strcmp(novoStatus, "pendente") != 0 && strcmp(novoStatus, "concluída") != 0);
+
+                if (strcmp(novoStatus, "em_andamento") == 0){
+                    lista[i].status = 1;
+                    strcpy(lista[i].statusDescr, "Em andamento");
+                }else if (strcmp(novoStatus, "pendente"))
+                {
+                    lista[i].status = 0;
+                    strcpy(lista[i].statusDescr, "Pendente");
+                }else if (strcmp(novoStatus, "concluída"))
+                {
+                    lista[i].status = 0;
+                    strcpy(lista[i].statusDescr, "Concluída");
+                }
+
+            }
+
+        }
+
+    }
+
+    return 0; 
+}
+int pesquisar_tarefa(int tamanho_indice){
+    int i;
+    int encontrou = 0;
+    char pesquisa[50];
+
+    printf("Digite o nome da tarefa que deseja pesquisar: ");
+    scanf("%49s", pesquisa);
+
+    for (i = 0; i < tamanho_indice; i++)
+    {
+        if (strcmp(lista[i].nome, pesquisa) == 0)
+        {
+            printf("===== TAREFA ENCONTRADA =====\n");
+            printf("%dº Tarefa: %s\n", i+1, lista[i].nome);
+            printf("Descricao: %s\n", lista[i].descricao);
+            printf("Status: %s\n", lista[i].statusDescr);
+            printf("=============================\n");
+
+            encontrou = 1;
+        }
+    }
+
+    if (encontrou == 0)
+    {
+        printf("Tarefa nao encontrada.\n");
+    }
+
+    return 0;
+}
 
 int main() {
     int opcao;
