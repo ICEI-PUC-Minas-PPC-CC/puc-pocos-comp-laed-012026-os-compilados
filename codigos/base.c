@@ -219,7 +219,7 @@ int main() {
                 i = i-1; // DEVE TER UM BLOCO DE CÓDIGO QUE IRÁ MANIPULAR A LISTA DE TAREFAS COM BASE NA PESPERCTIVA DE QUE O INDÍCE DIMINUIU, FAZENDO COM QUE POSIÇOES ANTERIORES RECEBAM VALORES QUE ERAM DO INDÍCE SUCESSOR.
                 break;
             case 5:
-                printf("=====BUSCADOR DE TAREFAS=====\n\n");
+                pesquisar_tarefa(i);
                 break;
             case 6:
                 i = 0;
