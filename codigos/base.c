@@ -146,6 +146,36 @@ int editar_tarefa(int tamanho_indice){
 
 }
 
+int pesquisar_tarefa(int tamanho_indice){
+    int i;
+    int encontrou = 0;
+    char pesquisa[50];
+
+    printf("Digite o nome da tarefa que deseja pesquisar: ");
+    scanf("%49s", pesquisa);
+
+    for (i = 0; i < tamanho_indice; i++)
+    {
+        if (strcmp(lista[i].nome, pesquisa) == 0)
+        {
+            printf("===== TAREFA ENCONTRADA =====\n");
+            printf("%dº Tarefa: %s\n", i+1, lista[i].nome);
+            printf("Descricao: %s\n", lista[i].descricao);
+            printf("Status: %s\n", lista[i].statusDescr);
+            printf("=============================\n");
+
+            encontrou = 1;
+        }
+    }
+
+    if (encontrou == 0)
+    {
+        printf("Tarefa nao encontrada.\n");
+    }
+
+    return 0;
+}
+
 
 int main() {
     int opcao;
