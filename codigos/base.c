@@ -79,7 +79,7 @@ int listar_tarefa(int tamanho_indice){
     return 0;
 }
 
-int editar_tarefa(int tamanho_indice){ //teste
+int editar_tarefa(int tamanho_indice){
     int op;
     int i;
     char editando[20];
