@@ -74,14 +74,10 @@ int listar_tarefa(int tamanho_indice){
             printf("=============================\n");
         }
 
-
-
-
     }
 
     return 0;
 }
-
 
 
 int main() {
