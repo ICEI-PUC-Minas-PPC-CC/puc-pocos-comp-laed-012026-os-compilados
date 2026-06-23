@@ -176,6 +176,27 @@ int pesquisar_tarefa(int tamanho_indice){
     return 0;
 }
 
+int excluir_tarefa(int tamanho_indice){
+    int op;
+
+    printf("Informe a tarefa que deseja excluir [digite do 1 até o número da tarefa máxima]: ");
+    listar_tarefa(tamanho_indice);
+    scanf("%d", &op);
+
+    op--;
+
+    for (op; op < tamanho_indice; op++)
+    {
+        strcpy(lista[op].nome, lista[op+1].nome);
+        strcpy(lista[op].descricao, lista[op+1].descricao);
+        strcpy(lista[op].statusDescr, lista[op+1].statusDescr);
+        lista[op].status = lista[op+1].status;
+    }
+    
+    return tamanho_indice-1;
+
+}
+
 
 int main() {
     int opcao;
@@ -216,7 +237,7 @@ int main() {
                 break;
             case 4:
                 printf("=====EXCLUIDOR DE TAREFAS=====");
-                i = i-1; // DEVE TER UM BLOCO DE CÓDIGO QUE IRÁ MANIPULAR A LISTA DE TAREFAS COM BASE NA PESPERCTIVA DE QUE O INDÍCE DIMINUIU, FAZENDO COM QUE POSIÇOES ANTERIORES RECEBAM VALORES QUE ERAM DO INDÍCE SUCESSOR.
+                i = excluir_tarefa(i); // DEVE TER UM BLOCO DE CÓDIGO QUE IRÁ MANIPULAR A LISTA DE TAREFAS COM BASE NA PESPERCTIVA DE QUE O INDÍCE DIMINUIU, FAZENDO COM QUE POSIÇOES ANTERIORES RECEBAM VALORES QUE ERAM DO INDÍCE SUCESSOR.
                 break;
             case 5:
                 pesquisar_tarefa(i);
