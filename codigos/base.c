@@ -285,7 +285,6 @@ int main() {
                 printf("Todas as tarefas foram excluidas.\n"); //O INDÍCE FOI ZERADO, MAS AINDA EXISTE A NECESSIDADE DE MANIPULAR A LISTA DE TAREFAS FAZEN DO COM QUE TODOS OS CAMPOS SEJAM ZERADOS.
                 break;
             case 7:
-                printf("=====RESUMO DE SUAS TAREFAS.=====");
                 resumir_tarefas(i);
                 break;
             case 0:
