@@ -197,6 +197,43 @@ int excluir_tarefa(int tamanho_indice){
 
 }
 
+int resumir_tarefas(int tamanho_indice) {
+    int i;
+    int total = 0;
+    int pendentes = 0;
+    int em_andamento = 0;
+    int concluidas = 0;
+
+    for (i = 0; i < tamanho_indice; i++) {
+        if (lista[i].ativo != 0) {
+            total++;
+
+            if (lista[i].status == 0) {
+                pendentes++;
+            } else if (lista[i].status == 1) {
+                em_andamento++;
+            } else if (lista[i].status == 2) {
+                concluidas++;
+            }
+        }
+    }
+
+    printf("\n===== RESUMO DAS TAREFAS =====\n");
+    printf("Total de tarefas: %d\n", total);
+    printf("Pendentes: %d\n", pendentes);
+    printf("Em andamento: %d\n", em_andamento);
+    printf("Concluidas: %d\n", concluidas);
+
+    if (total == 0) {
+        printf("Nenhuma tarefa cadastrada.\n");
+    }
+
+    printf("==============================\n");
+
+    return 0;
+}
+
+
 
 int main() {
     int opcao;
@@ -214,6 +251,7 @@ int main() {
         printf("\n4.  EXCLUIR TAREFA \n");
         printf("\n5.  PESQUISAR TAREFA \n");
         printf("\n6.  LIMPAR SISTEMA/TAREFAS \n");
+        printf("\n7. RESUMO DE SUAS TAREFAS \n");
         printf("\n0.  SAIR DO SISTEMA \n");
 
         printf("\nDIGITE UMA OPCAO: \n");
@@ -245,6 +283,10 @@ int main() {
             case 6:
                 i = 0;
                 printf("Todas as tarefas foram excluidas.\n"); //O INDÍCE FOI ZERADO, MAS AINDA EXISTE A NECESSIDADE DE MANIPULAR A LISTA DE TAREFAS FAZEN DO COM QUE TODOS OS CAMPOS SEJAM ZERADOS.
+                break;
+            case 7:
+                printf("=====RESUMO DE SUAS TAREFAS.=====");
+                resumir_tarefas(i);
                 break;
             case 0:
                 printf("Saindo...");
