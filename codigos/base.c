@@ -148,7 +148,7 @@ int editar_tarefa(int tamanho_indice){
 
 int pesquisar_tarefa(int tamanho_indice){
     int i;
-    int encontrou = 0;
+    int encontrou;
     char pesquisa[50];
 
     printf("Digite o nome da tarefa que deseja pesquisar: ");
@@ -199,7 +199,7 @@ int excluir_tarefa(int tamanho_indice){
 
 int resumir_tarefas(int tamanho_indice) {
     int i;
-    int total = 0;
+    int total;
     int pendentes = 0;
     int em_andamento = 0;
     int concluidas = 0;
